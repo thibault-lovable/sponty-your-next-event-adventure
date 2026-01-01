@@ -1,13 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from "react-helmet-async";
+import Navbar from "@/components/layout/Navbar";
+import HeroSection from "@/components/home/HeroSection";
+import EventsSection from "@/components/home/EventsSection";
+import MysteryTicketPreview from "@/components/home/MysteryTicketPreview";
+import Footer from "@/components/layout/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <>
+      <Helmet>
+        <title>Sponty - Billetterie événementielle & Billets Mystères</title>
+        <meta
+          name="description"
+          content="Découvrez Sponty, la plateforme de billetterie innovante. Réservez des événements ou tentez l'expérience unique du Billet Mystère pour vivre l'inattendu."
+        />
+        <meta
+          name="keywords"
+          content="billetterie, événements, concerts, spectacles, billet mystère, réservation"
+        />
+      </Helmet>
+
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <main>
+          <HeroSection />
+          <MysteryTicketPreview />
+          <EventsSection />
+        </main>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
